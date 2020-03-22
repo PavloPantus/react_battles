@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './MatchCard.scss';
 import classNames from 'classnames';
+import moment from "moment";
 
 const MatchCard = (
   {
@@ -14,12 +15,30 @@ const MatchCard = (
     command2coefficient,
     tournamentSystem,
     parnterLogo,
-    time,
-    date,
-
-
+    dateOfStart,
+    command1results,
+    command2results,
+    gameResults
   }
   ) => {
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const date = dateOfStart?.getDate()
+  const hours = dateOfStart?.getHours()
+  const minutes = dateOfStart?.getMinutes() < 10?
+    `0${dateOfStart?.getMinutes()}` : `${dateOfStart?.getMinutes()}`
+
+  const [duration, setDuration] = useState(moment.duration((dateOfStart - (new Date)), 'milliseconds'));
+
+  useEffect(()=>{
+    let interval = setInterval(()=>{setDuration(
+      moment.duration((dateOfStart - (new Date)), 'milliseconds')
+    )},1000);
+    return ()=>{clearInterval(interval)}
+  },[])
+
+
   return (
     <article className={
       classNames([
@@ -27,6 +46,7 @@ const MatchCard = (
         {
           'match-card_status-live': status === 'live',
           'match-card_status-upcoming': status === 'upcoming',
+          'match-card_status-finished': status === 'finished',
         }
       ])
     }>
@@ -37,36 +57,133 @@ const MatchCard = (
        <div className="match-card__watch-time-container">
          {
            status==='live' && (
-             <a href={'#'} className={'match-card__match-link caption'}>WATCH LIVE!</a>
+             <span className={'match-card__match-link caption'}>WATCH LIVE!</span>
            )
          }
          {
-           (status==='upcoming') && (
-             <div className="match-card__tournament-time">{time}</div>
+           (status==='upcoming' || status === 'finished') && (
+             <>
+               <div className={
+                 classNames({
+                   'h4': true,
+                   'match-card__tournament-time': status === 'upcoming',
+                   'match-card__tournament-time_finished': status === 'finished',
+                 })
+               }>
+                 {hours}:{minutes}
+               </div>
+               <div className="caption match-card__tournament-date">{date}</div>
+             </>
            )
          }
        </div>
      </div>
 
-      <div className="match-card__logos-container">
+      <div className={
+        classNames(
+          [
+            {
+              'match-card__logos-container_live': status === 'live',
+              'match-card__logos-container_upcoming': (status === 'upcoming'|| status ==='finished'),
+            }
+          ]
+        )
+      }>
         <img src={command1Logo} className={'match-card__command-logo'} alt="logo of command"/>
         <img src={command2Logo} className={'match-card__command-logo'} alt="logo of command"/>
       </div>
 
       <div className="match-card__commands-container">
         <div className="match-card__command">
-          <h5 className={'h5 match-card__command-name'}>{command1Name}</h5>
-          <div className={'match-card__command-coefficient'}>{command1coefficient}</div>
+          <h5
+            className={
+              classNames({
+                'h5 match-card__command-name': true,
+                'h5 match-card__command-name_lose': command1results?.lose,
+              })
+            }
+          >
+            {command1Name}
+          </h5>
+
+          {
+            (status === 'upcoming'|| status === 'live') && (
+              <div className={'match-card__command-coefficient'}>{command1coefficient}</div>
+            )
+          }
+
+          {
+            status === 'finished' && (
+              <div className={
+                classNames({
+                  'match-card__command-result': true,
+                  'match-card__command-result_lose': command1results.lose,
+                })
+              }>
+                {command1results.count}
+              </div>
+            )
+          }
         </div>
 
+
         <div className="match-card__command">
-          <h5 className={'h5 match-card__command-name'}>{command2Name}</h5>
-          <div className={'match-card__command-coefficient'}>{command2coefficient}</div>
+          <h5
+            className={
+              classNames({
+                'h5 match-card__command-name': true,
+                'h5 match-card__command-name_lose': command2results?.lose,
+              })
+            }
+          >
+            {command2Name}
+          </h5>
+
+          {
+            (status === 'upcoming' || status === 'live') && (
+              <div className={'match-card__command-coefficient'}>{command2coefficient}</div>
+            )
+          }
+
+          {
+            status === 'finished' && (
+              <div className={
+                classNames({
+                  'match-card__command-result': true,
+                  'match-card__command-result_lose': command2results.lose,
+                })
+              }>
+                {command2results.count}
+              </div>
+            )
+          }
         </div>
       </div>
 
       <div className="match-card__bottom-container">
-        <div className="match-card__tournament-system caption">{tournamentSystem}</div>
+        {
+          status === 'live' && (
+            <div className="match-card__tournament-system caption">
+              {tournamentSystem}
+            </div>
+          )
+        }
+
+        {
+          status === 'upcoming' && (
+            <div className="match-card__tournament-system caption">
+              Starts in: {duration.days() * 24}h {duration.minutes()}min {duration.seconds()}sec • {tournamentSystem}
+            </div>
+          )
+        }
+
+        {
+          status === 'finished' && (
+            <div className="match-card__tournament-system caption">
+              {gameResults}
+            </div>
+          )
+        }
         <img src={parnterLogo} alt="" className="match-card__partner-logo"/>
       </div>
 

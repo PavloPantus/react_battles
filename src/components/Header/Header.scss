@@ -5,7 +5,8 @@
   background-image: url("/images/background-Desktop.png");
   background-size: cover;
   padding-top: 122px;
-  padding-left: 235px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-position: center;
   @media (max-width: 1000px) {
     padding-top: 90px;
@@ -17,10 +18,7 @@
   }
 
   &__heading {
-    @media (max-width: 1000px) {
-      font-size: 48px;
-      line-height: 60px;
-    }
+
   }
 
   &__tabs-controls {
@@ -34,8 +32,8 @@
     color: $second-color;
     cursor: pointer;
     &:hover {
-      background-color: rgba(255, 94, 94, 0.21);
-      color: $white;
+      background-color: $white;
+      color: $primary-color;
     }
 
     @media (max-width: 1000px) {

@@ -5,7 +5,12 @@
 @import "style/index";
 @import "reset";
 
-.app {
+.content {
+  margin: 0 auto;
+  max-width: 1470px;
+}
 
+.app {
+  background: #E5E5E5;
 }
 

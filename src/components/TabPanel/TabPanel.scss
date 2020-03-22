@@ -1,7 +1,13 @@
 .matches-container {
-  background: #E5E5E5;
-  padding: 60px 237px 179px 237px;
+  padding: 60px 10px 179px 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 336px);
   grid-gap: 35px;
+
+  @media (max-width: 745px) {
+    padding: 30px 20px 179px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 374px));
+    grid-gap: 11px;
+  }
 }
