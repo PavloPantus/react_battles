@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_battles/static/css/main.7e6e1b06.chunk.css",
+    "main.js": "/react_battles/static/js/main.38591580.chunk.js",
+    "main.js.map": "/react_battles/static/js/main.38591580.chunk.js.map",
+    "runtime~main.js": "/react_battles/static/js/runtime~main.d37c9cdd.js",
+    "runtime~main.js.map": "/react_battles/static/js/runtime~main.d37c9cdd.js.map",
+    "static/js/2.265da307.chunk.js": "/react_battles/static/js/2.265da307.chunk.js",
+    "static/js/2.265da307.chunk.js.map": "/react_battles/static/js/2.265da307.chunk.js.map",
+    "index.html": "/react_battles/index.html",
+    "precache-manifest.a73b6ccbf361107eebbd5f611ac54e25.js": "/react_battles/precache-manifest.a73b6ccbf361107eebbd5f611ac54e25.js",
+    "service-worker.js": "/react_battles/service-worker.js",
+    "static/css/main.7e6e1b06.chunk.css.map": "/react_battles/static/css/main.7e6e1b06.chunk.css.map"
+  }
+}
