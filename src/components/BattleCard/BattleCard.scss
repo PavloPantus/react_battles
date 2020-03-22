@@ -27,6 +27,7 @@
 
   &__tournament-name {
     white-space: nowrap;
+    color: #8F9A9D;
   }
 
   &__top-container {
@@ -109,6 +110,10 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+  }
+
+  &__map {
+    color: #8F9A9D;
   }
 
   &__icon-winner{

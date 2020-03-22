@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+/* eslint-disable react/prop-types,no-shadow */
+import React, { useEffect, useState } from 'react';
 import './MatchCard.scss';
 import classNames from 'classnames';
-import moment from "moment";
+import moment from 'moment';
 
 const MatchCard = (
   {
@@ -18,79 +19,106 @@ const MatchCard = (
     dateOfStart,
     command1results,
     command2results,
-    gameResults
+    gameResults,
   }
-  ) => {
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+) => {
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
   ];
-  const date = dateOfStart?.getDate()
-  const hours = dateOfStart?.getHours()
-  const minutes = dateOfStart?.getMinutes() < 10?
-    `0${dateOfStart?.getMinutes()}` : `${dateOfStart?.getMinutes()}`
+  const date = dateOfStart?.getDate();
+  const hours = dateOfStart?.getHours();
+  const minutes = dateOfStart?.getMinutes() < 10
+    ? `0${dateOfStart?.getMinutes()}` : `${dateOfStart?.getMinutes()}`;
 
-  const [duration, setDuration] = useState(moment.duration((dateOfStart - (new Date)), 'milliseconds'));
+  const [duration, setDuration] = useState(
+    moment.duration((dateOfStart - (new Date())), 'milliseconds')
+  );
 
-  useEffect(()=>{
-    let interval = setInterval(()=>{setDuration(
-      moment.duration((dateOfStart - (new Date)), 'milliseconds')
-    )},1000);
-    return ()=>{clearInterval(interval)}
-  },[])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDuration(
+        moment.duration((dateOfStart - (new Date())), 'milliseconds')
+      );
+    }, 1000);
 
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <article className={
       classNames([
-       'match-card',
+        'match-card',
         {
           'match-card_status-live': status === 'live',
           'match-card_status-upcoming': status === 'upcoming',
           'match-card_status-finished': status === 'finished',
-        }
+        },
       ])
-    }>
-     <div className="match-card__top-container">
-       <h2 className={'match-card__tournament-name caption'}>
-         {nameOfTournament}
-       </h2>
-       <div className="match-card__watch-time-container">
-         {
-           status==='live' && (
-             <span className={'match-card__match-link caption'}>WATCH LIVE!</span>
-           )
-         }
-         {
-           (status==='upcoming' || status === 'finished') && (
-             <>
-               <div className={
-                 classNames({
-                   'h4': true,
-                   'match-card__tournament-time': status === 'upcoming',
-                   'match-card__tournament-time_finished': status === 'finished',
-                 })
-               }>
-                 {hours}:{minutes}
-               </div>
-               <div className="caption match-card__tournament-date">{date}</div>
-             </>
-           )
-         }
-       </div>
-     </div>
+    }
+    >
+      <div className="match-card__top-container">
+        <h2 className="match-card__tournament-name caption">
+          {nameOfTournament}
+        </h2>
+        <div className="match-card__watch-time-container">
+          {
+            status === 'live' && (
+              <span className="caption match-card__match-link">
+                WATCH LIVE!
+              </span>
+            )
+          }
+          {
+            (status === 'upcoming' || status === 'finished') && (
+            <>
+              <div className={
+                classNames({
+                  h4: true,
+                  'match-card__tournament-time': status === 'upcoming',
+                  'match-card__tournament-time_finished': status === 'finished',
+                })
+              }
+              >
+                {hours}
+                :
+                {minutes}
+              </div>
+              <div className="caption match-card__tournament-date">
+                {date}
+                {' '}
+                {monthNames[dateOfStart.getMonth()]}
+              </div>
+            </>
+            )
+          }
+        </div>
+      </div>
 
       <div className={
         classNames(
           [
             {
               'match-card__logos-container_live': status === 'live',
-              'match-card__logos-container_upcoming': (status === 'upcoming'|| status ==='finished'),
-            }
+              'match-card__logos-container_upcoming': (
+                status === 'upcoming' || status === 'finished'
+              ),
+            },
           ]
         )
-      }>
-        <img src={command1Logo} className={'match-card__command-logo'} alt="logo of command"/>
-        <img src={command2Logo} className={'match-card__command-logo'} alt="logo of command"/>
+      }
+      >
+        <img
+          src={command1Logo}
+          className="match-card__command-logo"
+          alt="logo of command"
+        />
+        <img
+          src={command2Logo}
+          className="match-card__command-logo"
+          alt="logo of command"
+        />
       </div>
 
       <div className="match-card__commands-container">
@@ -107,8 +135,10 @@ const MatchCard = (
           </h5>
 
           {
-            (status === 'upcoming'|| status === 'live') && (
-              <div className={'match-card__command-coefficient'}>{command1coefficient}</div>
+            (status === 'upcoming' || status === 'live') && (
+              <div className="match-card__command-coefficient">
+                {command1coefficient}
+              </div>
             )
           }
 
@@ -119,13 +149,13 @@ const MatchCard = (
                   'match-card__command-result': true,
                   'match-card__command-result_lose': command1results.lose,
                 })
-              }>
+              }
+              >
                 {command1results.count}
               </div>
             )
           }
         </div>
-
 
         <div className="match-card__command">
           <h5
@@ -141,7 +171,9 @@ const MatchCard = (
 
           {
             (status === 'upcoming' || status === 'live') && (
-              <div className={'match-card__command-coefficient'}>{command2coefficient}</div>
+              <div className="match-card__command-coefficient">
+                {command2coefficient}
+              </div>
             )
           }
 
@@ -152,7 +184,8 @@ const MatchCard = (
                   'match-card__command-result': true,
                   'match-card__command-result_lose': command2results.lose,
                 })
-              }>
+              }
+              >
                 {command2results.count}
               </div>
             )
@@ -172,7 +205,18 @@ const MatchCard = (
         {
           status === 'upcoming' && (
             <div className="match-card__tournament-system caption">
-              Starts in: {duration.days() * 24}h {duration.minutes()}min {duration.seconds()}sec • {tournamentSystem}
+              Starts in:
+              {' '}
+              {duration.days() * 24}
+              h
+              {' '}
+              {duration.minutes()}
+              min
+              {' '}
+              {duration.seconds()}
+              sec •
+              {' '}
+              {tournamentSystem}
             </div>
           )
         }
@@ -184,11 +228,15 @@ const MatchCard = (
             </div>
           )
         }
-        <img src={parnterLogo} alt="" className="match-card__partner-logo"/>
+        <img
+          src={parnterLogo}
+          alt=""
+          className="match-card__partner-logo"
+        />
       </div>
 
     </article>
-  )
-}
+  );
+};
 
 export default MatchCard;

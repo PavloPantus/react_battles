@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types,jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './TabPanel.scss';
 import MatchCard from '../MatchCard/MatchCard';
