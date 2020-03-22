@@ -1,0 +1,50 @@
+@import "../react_battles/src/style/index";
+
+.header {
+  background-color: black;
+  background-image: url("/images/background-Desktop.png");
+  background-size: cover;
+  padding-top: 122px;
+  padding-left: 235px;
+  background-position: center;
+  @media (max-width: 1000px) {
+    padding-top: 90px;
+    padding-left: 20px;
+  }
+
+  @media (max-width: 414px) {
+    background-image: url("/images/background-mobile.png");
+  }
+
+  &__heading {
+    @media (max-width: 1000px) {
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+
+  &__tabs-controls {
+    margin-top: 75px;
+  }
+
+  &__tab-control {
+    padding: 20px 50px;
+    border: none;
+    background-color: transparent;
+    color: $second-color;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(255, 94, 94, 0.21);
+      color: $white;
+    }
+
+    @media (max-width: 1000px) {
+      padding: 15px 25px;
+    }
+
+    &_active {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}

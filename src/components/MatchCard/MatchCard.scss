@@ -1,0 +1,97 @@
+@import "src/style/index";
+.match-card {
+  padding: 25px;
+  width: 336px;
+  height: 360px;
+  border: 1px solid rgba(143, 154, 157, 0.2);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: $white;
+  white-space: nowrap;
+
+ &_status-live {
+   border: 1px solid $primary-color;
+   background-image: url("/images/logo-star-status-live.png");
+ }
+
+  &_status-upcoming {
+    background-image: url("/images/logo-star-status-upcoming.png");
+  }
+
+  &__tournament-name {
+    white-space: nowrap;
+  }
+
+  &__top-container {
+    display: flex;
+    width: 100%;
+  }
+
+  &__watch-time-container {
+    margin-left: 75px;
+  }
+
+  &__match-link {
+    &:hover {
+      transform: scale(1.2);
+    }
+    display: block;
+    margin-top: 55px;
+    color: $white;
+  }
+
+  &__logos-container {
+    margin-top: 76px;
+  }
+
+  &__command-logo {
+    &:not(:first-child){
+      margin-left: 15px;
+    }
+  }
+
+  &__commands-container {
+    margin-top: 15px;
+  }
+
+  &__command {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+
+  &__command-coefficient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 24px;
+    background: #FAFAFA;
+    border: 1px solid rgba(151, 151, 151, 0.1);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+
+  &__bottom-container {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
