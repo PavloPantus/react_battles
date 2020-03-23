@@ -139,7 +139,7 @@ const BattleCard = (
             <div className="battle-card__map caption">
               <img
                 className="battle-card__icon-winner"
-                src="/images/icon-winner.png"
+                src="/react_battles/images/icon-winner.png"
                 alt=""
               />
               <span>

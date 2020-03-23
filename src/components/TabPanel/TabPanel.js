@@ -13,14 +13,14 @@ const TabPanel = ({ activeTab }) => (
           <MatchCard
             nameOfTournament="Asia Minor: Play-Off"
             status="live"
-            command1Logo="/images/command1-logo.png"
-            command2Logo="/images/command2-logo.png"
+            command1Logo="/react_battles/images/command1-logo.png"
+            command2Logo="/react_battles/images/command2-logo.png"
             command1Name="Albert Warren"
             command2Name="Gloria Henry"
             command1coefficient="3.22"
             command2coefficient="53.22"
             tournamentSystem="Bо 3"
-            parnterLogo="/images/match-partner-logo.png"
+            parnterLogo="/react_battles/images/match-partner-logo.png"
           />
         </a>
 
@@ -28,22 +28,22 @@ const TabPanel = ({ activeTab }) => (
           nameOfTournament="Asia Minor: Play-Off"
           status="upcoming"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1coefficient="3.22"
           command2coefficient="53.22"
           tournamentSystem="Bо 3"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
         <MatchCard
           nameOfTournament="Asia Minor: Play-Off"
           status="finished"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1results={{
@@ -53,21 +53,21 @@ const TabPanel = ({ activeTab }) => (
             lose: false, count: 3,
           }}
           gameResults="1:0 • 1:0 • 1:0"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
         <a href="#">
           <MatchCard
             nameOfTournament="Asia Minor: Play-Off"
             status="live"
-            command1Logo="/images/command1-logo.png"
-            command2Logo="/images/command2-logo.png"
+            command1Logo="/react_battles/images/command1-logo.png"
+            command2Logo="/react_battles/images/command2-logo.png"
             command1Name="Albert Warren"
             command2Name="Gloria Henry"
             command1coefficient="3.22"
             command2coefficient="53.22"
             tournamentSystem="Bо 3"
-            parnterLogo="/images/match-partner-logo.png"
+            parnterLogo="/react_battles/images/match-partner-logo.png"
           />
         </a>
 
@@ -75,22 +75,22 @@ const TabPanel = ({ activeTab }) => (
           nameOfTournament="Asia Minor: Play-Off"
           status="upcoming"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1coefficient="3.22"
           command2coefficient="53.22"
           tournamentSystem="Bо 3"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
         <MatchCard
           nameOfTournament="Asia Minor: Play-Off"
           status="finished"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1results={{
@@ -100,21 +100,21 @@ const TabPanel = ({ activeTab }) => (
             lose: false, count: 3,
           }}
           gameResults="1:0 • 1:0 • 1:0"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
         <a href="#">
           <MatchCard
             nameOfTournament="Asia Minor: Play-Off"
             status="live"
-            command1Logo="/images/command1-logo.png"
-            command2Logo="/images/command2-logo.png"
+            command1Logo="/react_battles/images/command1-logo.png"
+            command2Logo="/react_battles/images/command2-logo.png"
             command1Name="Albert Warren"
             command2Name="Gloria Henry"
             command1coefficient="3.22"
             command2coefficient="53.22"
             tournamentSystem="Bо 3"
-            parnterLogo="/images/match-partner-logo.png"
+            parnterLogo="/react_battles/images/match-partner-logo.png"
           />
         </a>
 
@@ -122,22 +122,22 @@ const TabPanel = ({ activeTab }) => (
           nameOfTournament="Asia Minor: Play-Off"
           status="upcoming"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1coefficient="3.22"
           command2coefficient="53.22"
           tournamentSystem="Bо 3"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
         <MatchCard
           nameOfTournament="Asia Minor: Play-Off"
           status="finished"
           dateOfStart={new Date('2020-10-29T19:00:00.417-00:00')}
-          command1Logo="/images/command1-logo.png"
-          command2Logo="/images/command2-logo.png"
+          command1Logo="/react_battles/images/command1-logo.png"
+          command2Logo="/react_battles/images/command2-logo.png"
           command1Name="Albert Warren"
           command2Name="Gloria Henry"
           command1results={{
@@ -147,7 +147,7 @@ const TabPanel = ({ activeTab }) => (
             lose: false, count: 3,
           }}
           gameResults="1:0 • 1:0 • 1:0"
-          parnterLogo="/images/match-partner-logo.png"
+          parnterLogo="/react_battles/images/match-partner-logo.png"
         />
 
       </>
@@ -164,7 +164,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
           winner={{
             command: 'Natus Vincere',
@@ -180,7 +180,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
         />
 
@@ -191,7 +191,7 @@ const TabPanel = ({ activeTab }) => (
             group1Name="Group A"
             group2Name="Group B"
             matchNumber="1"
-            disciplineIcon="/images/icon-discipline.png"
+            disciplineIcon="/react_battles/images/icon-discipline.png"
             map="Erangel"
           />
         </a>
@@ -203,7 +203,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
           winner={{
             command: 'Natus Vincere',
@@ -219,7 +219,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
         />
 
@@ -230,7 +230,7 @@ const TabPanel = ({ activeTab }) => (
             group1Name="Group A"
             group2Name="Group B"
             matchNumber="1"
-            disciplineIcon="/images/icon-discipline.png"
+            disciplineIcon="/react_battles/images/icon-discipline.png"
             map="Erangel"
           />
         </a>
@@ -242,7 +242,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
           winner={{
             command: 'Natus Vincere',
@@ -258,7 +258,7 @@ const TabPanel = ({ activeTab }) => (
           group1Name="Group A"
           group2Name="Group B"
           matchNumber="1"
-          disciplineIcon="/images/icon-discipline.png"
+          disciplineIcon="/react_battles/images/icon-discipline.png"
           map="Erangel"
         />
 
@@ -269,7 +269,7 @@ const TabPanel = ({ activeTab }) => (
             group1Name="Group A"
             group2Name="Group B"
             matchNumber="1"
-            disciplineIcon="/images/icon-discipline.png"
+            disciplineIcon="/react_battles/images/icon-discipline.png"
             map="Erangel"
           />
         </a>

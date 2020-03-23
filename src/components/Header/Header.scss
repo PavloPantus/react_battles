@@ -2,7 +2,7 @@
 
 .header {
   background-color: black;
-  background-image: url("/images/background-Desktop.png");
+  background-image: url("/react_battles/images/background-Desktop.png");
   background-size: cover;
   padding-top: 122px;
   padding-left: 20px;
@@ -14,7 +14,7 @@
   }
 
   @media (max-width: 414px) {
-    background-image: url("/images/background-mobile.png");
+    background-image: url("/react_battles/images/background-mobile.png");
   }
 
   &__heading {
