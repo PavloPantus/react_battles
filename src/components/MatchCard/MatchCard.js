@@ -31,19 +31,23 @@ const MatchCard = (
     ? `0${dateOfStart?.getMinutes()}` : `${dateOfStart?.getMinutes()}`;
 
   const [duration, setDuration] = useState(
-    moment.duration((dateOfStart - (new Date())), 'milliseconds')
+    moment.duration(
+      (dateOfStart?.getTime() - (new Date()).getTime()), 'milliseconds'
+    )
   );
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDuration(
-        moment.duration((dateOfStart - (new Date())), 'milliseconds')
-      );
-    }, 1000);
+    if (dateOfStart) {
+      const interval = setInterval(() => {
+        setDuration(
+          duration => moment.duration(duration - 1000, 'milliseconds')
+        );
+      }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
+      return () => {
+        clearInterval(interval);
+      };
+    }
   }, []);
 
   return (
@@ -205,16 +209,17 @@ const MatchCard = (
         {
           status === 'upcoming' && (
             <div className="match-card__tournament-system caption">
-              Starts in:
               {' '}
-              {duration.days() * 24}
-              h
+              {duration.months() > 0 && duration.months()}
+              {duration.months() > 0 && 'month'}
+              {' '}
+              {duration.hours()}
+              {duration.hours() > 0 && 'h'}
               {' '}
               {duration.minutes()}
               min
               {' '}
-              {duration.seconds()}
-              sec •
+              •
               {' '}
               {tournamentSystem}
             </div>
